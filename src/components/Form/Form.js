@@ -20,7 +20,7 @@ export default function Form({ handleSubmitForm, cardInputRef }) {
         minLength={4}
         onChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
-        placeholder="Добавить запись (4 cимвола)"
+        placeholder="Добавить запись (минимум 4 cимвола)"
       />
       <button type="submit" id="submit-btn" name="submit-btn" className={`btn btn-light ${styles.submitButton}`} disabled={buttonDisabled}>Добавить</button>
     </form>
