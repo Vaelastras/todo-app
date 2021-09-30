@@ -1,0 +1,10 @@
+.timer {
+  font: 600 16px/22px 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .timer {
+    display: none;
+  }
+}

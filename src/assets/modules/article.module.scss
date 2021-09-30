@@ -1,0 +1,68 @@
+.card {
+  position: relative;
+  display: flex;
+  place-content: space-between;
+  place-items: center;
+  padding: 10px 20px;
+  border: 1px solid darkgray;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(tomato, .75);
+  color: white;
+}
+
+.complete {
+  background: lightgreen;
+  color: black;
+}
+
+.text {
+  font: 350 16px/22px 'Roboto', 'Arial', sans-serif;
+  transition: all 150ms ease-in;
+  cursor: pointer;
+  word-wrap: break-word;
+  z-index: 1;
+  max-width: 90%;
+  margin-right: 5px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.button {
+  border-radius: 6px;
+  border: 1px solid darkgray;
+  background: white;
+}
+
+.icon{
+  font-size: 1.25rem;
+}
+
+.layout {
+  position: absolute;
+  right: 20%;
+  transform: scale(2.5);
+  color: whitesmoke;
+}
+
+.layout:before {
+  transform: scale(2.5);
+  opacity: .5;
+}
+
+@media screen and (max-width: 767px){
+  .card {
+    padding: 6px 16px;
+  }
+
+  .text {
+    font: 350 14px/20px 'Roboto', 'Arial', sans-serif;
+    max-width: 80%;
+  }
+
+  .layout {
+    display: none;
+  }
+}

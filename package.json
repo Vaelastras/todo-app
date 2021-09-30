@@ -1,0 +1,66 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "gh-pages": "^3.2.3",
+    "mobx": "^6.3.3",
+    "mobx-react": "^7.2.0",
+    "mobx-react-lite": "^3.2.1",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "sass": "^1.42.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "npx eslint src",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "description": "Проект написан на React.js в формате SPA и представляет собой список записей в формате TODO, для контроля выполнения задач. Проект доступен в режимах разработки и сборки.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//Vaelastras/todo-app.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "belov",
+  "license": "MIT"
+}

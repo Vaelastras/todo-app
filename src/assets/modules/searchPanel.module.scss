@@ -1,0 +1,44 @@
+.searchPanel {
+  display: flex;
+  margin: 16px 0;
+}
+
+.input {
+  margin: 0 5px 0 0;
+  height: 50px;
+  width: 100%;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid lightslategray;
+  font: 400 16px/22px 'Roboto', 'Arial', sans-serif;
+}
+.button {}
+
+@media screen and (max-width: 767px){
+  .searchPanel {
+    margin: 0 0 16px;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .input {
+    margin: 0 0 6px 0;
+    height: 40px;
+    padding: 0 6px;
+    font: 400 14px/20px 'Roboto', 'Arial', sans-serif;
+    &::placeholder {
+      font: 400 13px/18px 'Roboto', 'Arial', sans-serif;
+      color: darkgray;
+    }
+  }
+
+  .buttonGroup {
+    flex: 0 0 auto;
+  }
+
+  .button {
+    min-height: 32px;
+    font: 400 14px/14px 'Roboto', 'Arial', sans-serif;
+  }
+
+}

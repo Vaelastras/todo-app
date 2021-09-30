@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  margin: 16px 0;
+}
+
+.input {
+  min-width: 100px;
+  margin-right: 5px;
+  height: 50px;
+  width: 100%;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid lightslategray;
+  font: 400 16px/22px 'Roboto', 'Arial', sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    margin: 16px 0 0 0;
+  }
+
+  .input{
+    height: 40px;
+    padding: 0 6px;
+    font: 400 14px/20px 'Roboto', 'Arial', sans-serif;
+    &::placeholder {
+      font: 400 13px/18px 'Roboto', 'Arial', sans-serif;
+      color: darkgray;
+    }
+  }
+
+  .submitButton {
+    min-height: 32px;
+    font: 400 14px/14px 'Roboto', 'Arial', sans-serif;
+    margin: 0 auto;
+  }
+
+}
