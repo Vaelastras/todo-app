@@ -2,7 +2,11 @@ import React from 'react';
 import styles from '../../assets/modules/articles.module.scss';
 import Article from '../Article/Article';
 
-export default function Articles({ handleDeleteCard, handleToggleCompleteCard, cards }) {
+export default function Articles(
+  {
+    handleDeleteCard, handleToggleCompleteCard, cards, handleSearchContent,
+  },
+) {
   return (
     <section className={styles.articles}>
       {
@@ -16,6 +20,7 @@ export default function Articles({ handleDeleteCard, handleToggleCompleteCard, c
     props={props}
     handleDeleteCard={handleDeleteCard}
     handleToggleCompleteCard={handleToggleCompleteCard}
+    handleSearchContent={handleSearchContent}
   />
 			  );
 				})

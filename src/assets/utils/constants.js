@@ -5,3 +5,4 @@ import BG_4 from '../images/bg4.jpeg';
 
 export const IMAGE_ARR = [BG_1, BG_2, BG_3, BG_4];
 export const TIME_FOR_LOOP = IMAGE_ARR.length * 10000;
+export const SEARCH_URL = 'https://yandex.ru/search/?text=';

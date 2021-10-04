@@ -7,7 +7,7 @@ import SearchPanel from '../SearchPanel/SearchPanel';
 import Articles from '../Articles/Articles';
 import Form from '../Form/Form';
 import appStore from '../../store/store';
-import { IMAGE_ARR, TIME_FOR_LOOP } from '../../assets/utils/constants';
+import { IMAGE_ARR, TIME_FOR_LOOP, SEARCH_URL } from '../../assets/utils/constants';
 
 const store = appStore();
 export const App = observer(() => {
@@ -114,6 +114,11 @@ export const App = observer(() => {
     localStorage.setItem('cards', JSON.stringify(store.cards));
   };
 
+  const handleSearchContent = (name) => {
+    window.open(`${SEARCH_URL}${name}`, '_blank');
+    window.history.back();
+  };
+
   const remainingTask = store.cards.filter((val) => val.completeTask === false).length;
   const renderCard = handleFilterButtonCards(store.cardsFilter, searchRequest);
 
@@ -138,6 +143,7 @@ export const App = observer(() => {
             handleDeleteCard={handleDeleteCard}
             handleToggleCompleteCard={handleToggleCompleteCard}
             cards={renderCard}
+            handleSearchContent={handleSearchContent}
           />
           <Form
             cardInputRef={cardInputRef}

@@ -22,7 +22,7 @@
   cursor: pointer;
   word-wrap: break-word;
   z-index: 1;
-  max-width: 90%;
+  max-width: 85%;
   margin-right: 5px;
 }
 
@@ -34,9 +34,19 @@
   border-radius: 6px;
   border: 1px solid darkgray;
   background: white;
+  margin-right: 5px;
+  transition: all .25s ease-in-out;
 }
 
-.icon{
+.button:last-of-type {
+  margin-right: 0;
+}
+
+.button__search:hover {
+  color: green;
+}
+
+.icon {
   font-size: 1.25rem;
 }
 
@@ -54,7 +64,7 @@
 
 @media screen and (max-width: 767px){
   .card {
-    padding: 6px 16px;
+    padding: 6px 12px;
   }
 
   .text {
@@ -64,5 +74,13 @@
 
   .layout {
     display: none;
+  }
+
+  .button__wrapper {
+    display: inline-flex;
+  }
+
+  .icon {
+    font-size: .85rem;
   }
 }
