@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../assets/modules/article.module.scss';
 
 export default function Article({
-  id, name, props, handleDeleteCard, handleToggleCompleteCard, handleSearchContent,
+  id, name, props, handleToggleCompleteCard, handleSearchContent, handlePopupToggle,
 }) {
   const { completeTask } = props;
 
@@ -36,9 +36,11 @@ export default function Article({
         </button>
         <button
           onClick={(e) => {
-					  e.stopPropagation();
-					  handleDeleteCard(id);
+            e.stopPropagation();
+            handlePopupToggle(id, name);
           }}
+					  // handleDeleteCard(id);
+          // }
           className={`${styles.button} btn-outline-danger`}
           title={`Удалить карту "${name}"`}
           type="button"

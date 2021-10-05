@@ -4,7 +4,7 @@ import Article from '../Article/Article';
 
 export default function Articles(
   {
-    handleDeleteCard, handleToggleCompleteCard, cards, handleSearchContent,
+    handleToggleCompleteCard, cards, handleSearchContent, handlePopupToggle,
   },
 ) {
   return (
@@ -18,9 +18,10 @@ export default function Articles(
     id={id}
     name={name}
     props={props}
-    handleDeleteCard={handleDeleteCard}
+    // handleDeleteCard={handleDeleteCard}
     handleToggleCompleteCard={handleToggleCompleteCard}
     handleSearchContent={handleSearchContent}
+    handlePopupToggle={handlePopupToggle}
   />
 			  );
 				})

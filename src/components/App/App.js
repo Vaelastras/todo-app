@@ -8,10 +8,13 @@ import Articles from '../Articles/Articles';
 import Form from '../Form/Form';
 import appStore from '../../store/store';
 import { IMAGE_ARR, TIME_FOR_LOOP, SEARCH_URL } from '../../assets/utils/constants';
+import Popup from '../Popup/Popup';
 
 const store = appStore();
 export const App = observer(() => {
   const [searchRequest, setSearchRequest] = useState('');
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [cardDelete, setCardDelete] = useState({});
   const pageRef = useRef('');
   const searchInputRef = useRef(null);
   const cardInputRef = useRef(null);
@@ -44,6 +47,20 @@ export const App = observer(() => {
     }
     return null;
   }, []);
+
+  const handlePopupToggle = (id = null, name = '') => {
+    setPopupOpen(!popupOpen);
+    setCardDelete({ id, name });
+    console.log(cardDelete);
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        handlePopupToggle();
+      }
+    });
+  }, [popupOpen]);
 
   const focusInput = () => {
     cardInputRef.current.focus();
@@ -83,8 +100,9 @@ export const App = observer(() => {
   const handleDeleteCard = (id) => {
     const idx = store.cards.findIndex((val) => val.id === id);
     runInAction(() => store.handleDelete(idx));
-
+    handlePopupToggle();
     if (store.cards.length === 0) {
+      handlePopupToggle();
       return localStorage.removeItem('cards');
     }
     localStorage.setItem('cards', JSON.stringify(store.cards));
@@ -119,6 +137,13 @@ export const App = observer(() => {
     window.history.back();
   };
 
+  const handlePopupCloseOverlay = (e) => {
+    const classes = e.target.classList.value.split(' ').filter((val) => val.includes('popup_active'));
+    if (e.target.classList.contains(classes)) {
+      handlePopupToggle();
+    }
+  };
+
   const remainingTask = store.cards.filter((val) => val.completeTask === false).length;
   const renderCard = handleFilterButtonCards(store.cardsFilter, searchRequest);
 
@@ -140,16 +165,24 @@ export const App = observer(() => {
             />
           )}
           <Articles
-            handleDeleteCard={handleDeleteCard}
             handleToggleCompleteCard={handleToggleCompleteCard}
+            // handleDeleteCard={handleDeleteCard}
             cards={renderCard}
             handleSearchContent={handleSearchContent}
+            handlePopupToggle={handlePopupToggle}
           />
           <Form
             cardInputRef={cardInputRef}
             handleSubmitForm={handleSubmitForm}
           />
         </main>
+        <Popup
+          card={cardDelete}
+          popupOpen={popupOpen}
+          handlePopupCloseOverlay={handlePopupCloseOverlay}
+          handlePopupToggle={handlePopupToggle}
+          handleDeleteCard={handleDeleteCard}
+        />
       </div>
     </div>
   );
