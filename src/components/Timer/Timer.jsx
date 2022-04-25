@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../assets/modules/timer.module.scss';
+import styles from './timer.module.scss';
 
 function Timer() {
   const [time, setTime] = useState('');

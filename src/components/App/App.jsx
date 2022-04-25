@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../../store/todoSlice';
-import styles from '../../assets/modules/app.module.scss';
+import styles from './app.module.scss';
 import Header from '../Header/Header';
 import SearchPanel from '../SearchPanel/SearchPanel';
 import Articles from '../Articles/Articles';

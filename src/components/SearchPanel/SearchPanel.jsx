@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import styles from '../../assets/modules/searchPanel.module.scss';
+import styles from './searchPanel.module.scss';
 
 export default function SearchPanel({
   cardsFilter, handleFilterButtonCards, handleSearchTextCards,

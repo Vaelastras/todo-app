@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from '../../assets/modules/article.module.scss';
+import styles from './article.module.scss';
 import { removeTodo, toggleTodo } from '../../store/todoSlice';
 import { SEARCH_URL } from '../../assets/utils/constants';
 

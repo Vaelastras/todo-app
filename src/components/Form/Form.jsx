@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../assets/modules/form.module.scss';
+import styles from './form.module.scss';
 
 export default function Form({ handleSubmitForm, cardInputRef }) {
   const [inputValue, setInputValue] = useState('');

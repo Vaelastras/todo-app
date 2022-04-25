@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../assets/modules/articles.module.scss';
+import styles from './articles.module.scss';
 import Article from '../Article/Article';
 
 export default function Articles({ handleSearchContent, todos }) {

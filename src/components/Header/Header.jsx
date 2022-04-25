@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styles from '../../assets/modules/header.module.scss';
+import styles from './header.module.scss';
 import Timer from '../Timer/Timer';
 import User from '../User/User';
 
