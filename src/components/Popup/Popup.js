@@ -3,7 +3,7 @@ import styles from '../../assets/modules/popup.module.scss';
 
 export default function Popup(
   {
-    popupOpen, handlePopupToggle, handlePopupCloseOverlay, handleDeleteCard, card,
+    popupOpen, handlePopupToggle, handlePopupCloseOverlay, card,
   },
 ) {
   const { id, name } = card;
@@ -30,7 +30,7 @@ export default function Popup(
         </p>
         <div className={styles.button__wrapper}>
           <button onClick={handlePopupToggle} className={styles.button} type="button" name="button-reset">Нет! Я поспешил!</button>
-          <button onClick={() => handleDeleteCard(id)} className={styles.button} type="submit" name="button-confirm">Да, все в порядке!</button>
+          <button onClick={() => remov(id))} className={styles.button} type="submit" name="button-confirm">Да, все в порядке!</button>
         </div>
       </div>
     </div>

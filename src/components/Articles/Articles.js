@@ -2,29 +2,21 @@ import React from 'react';
 import styles from '../../assets/modules/articles.module.scss';
 import Article from '../Article/Article';
 
-export default function Articles(
-  {
-    handleToggleCompleteCard, cards, handleSearchContent, handlePopupToggle,
-  },
-) {
+export default function Articles({ handleSearchContent, todos }) {
   return (
     <section className={styles.articles}>
       {
-				cards.map((card) => {
-			  	const { id, name, ...props } = card;
-			  	return (
-  <Article
-    key={id + new Date().getTime() + Math.random()}
-    id={id}
-    name={name}
-    props={props}
-    // handleDeleteCard={handleDeleteCard}
-    handleToggleCompleteCard={handleToggleCompleteCard}
-    handleSearchContent={handleSearchContent}
-    handlePopupToggle={handlePopupToggle}
-  />
-			  );
-				})
+        todos.map((card) => {
+          const { id, name } = card;
+          return (
+            <Article
+              key={id + new Date().getTime() + Math.random()}
+              id={id}
+              name={name}
+              handleSearchContent={handleSearchContent}
+            />
+          );
+        })
 }
     </section>
   );

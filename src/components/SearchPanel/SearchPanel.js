@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from '../../assets/modules/searchPanel.module.scss';
 
 export default function SearchPanel({
-  cardsFilter, handleFilterCard, setSearchRequest, searchInputRef, searchRequest,
+  cardsFilter, handleFilterButtonCards, handleSearchTextCards,
 }) {
+  const searchInputRef = useRef(null);
   const buttons = [
     {
       id: 1,
@@ -24,23 +25,31 @@ export default function SearchPanel({
 
   return (
     <div className={styles.searchPanel}>
-      <input ref={searchInputRef} className={styles.input} type="text" minLength={3} placeholder="введите что-нибудь для поиска" onChange={(evt) => setSearchRequest(evt.target.value)} value={searchRequest} />
+      <input
+        ref={searchInputRef}
+        className={styles.input}
+        type="text"
+        minLength={3}
+        placeholder="введите что-нибудь для поиска"
+        onChange={(evt) => handleSearchTextCards(evt.target.value)}
+        // value={searchRequest}
+      />
       <div className={`btn-group ${styles.buttonGroup}`} role="group" aria-label="buttons block">
         { buttons.map((button) => {
-				  const { name, id, label } = button;
-				  const buttonClassName = name === cardsFilter ? 'btn-light' : 'btn-outline-light';
-				  return (
-  <button
-    key={`${name + id}`}
-    className={`btn ${buttonClassName} ${styles.button}`}
-    id={id}
-    name={name}
-    onClick={() => handleFilterCard(name)}
-    type="button"
-  >
-    {label}
-  </button>
-				  );
+          const { name, id, label } = button;
+          const buttonClassName = name === cardsFilter ? 'btn-light' : 'btn-outline-light';
+          return (
+            <button
+              key={`${name + id}`}
+              className={`btn ${buttonClassName} ${styles.button}`}
+              id={id}
+              name={name}
+              onClick={() => handleFilterButtonCards(name)}
+              type="button"
+            >
+              {label}
+            </button>
+          );
         })}
       </div>
     </div>
