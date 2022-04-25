@@ -32,7 +32,6 @@ export default function SearchPanel({
         minLength={3}
         placeholder="введите что-нибудь для поиска"
         onChange={(evt) => handleSearchTextCards(evt.target.value)}
-        // value={searchRequest}
       />
       <div className={`btn-group ${styles.buttonGroup}`} role="group" aria-label="buttons block">
         { buttons.map((button) => {

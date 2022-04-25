@@ -7,12 +7,10 @@ import SearchPanel from '../SearchPanel/SearchPanel';
 import Articles from '../Articles/Articles';
 import Form from '../Form/Form';
 import { IMAGE_ARR, TIME_FOR_LOOP } from '../../assets/utils/constants';
-// import Popup from '../Popup/Popup';
 
 export const App = () => {
   const dispatch = useDispatch();
   const [renderItems, setRenderItems] = useState([]);
-  // const [searchRequest, setSearchRequest] = useState('');
   const todos = useSelector((state) => state.todos.cards);
   useEffect(() => {
     setRenderItems(todos);
@@ -39,63 +37,11 @@ export const App = () => {
     }, (IMAGE_ARR.length + 1) * TIME_FOR_LOOP);
   }, []);
 
-  // useEffect(() => {
-  //   if (localStorage.getItem('cards')) {
-  //     runInAction(() => {
-  //       store.cards = JSON.parse(localStorage.getItem('cards'));
-  //     });
-  //   } else {
-  //     return null;
-  //   }
-  //   return null;
-  // }, []);
-  //
-  // const handlePopupToggle = () => {
-  //   setPopupOpen(!popupOpen);
-  // };
-  //
-  // useEffect(() => {
-  //   document.addEventListener('keydown', (e) => {
-  //     if (e.key === 'Escape') {
-  //       handlePopupToggle();
-  //     }
-  //   });
-  // }, [popupOpen]);
-
-  // const focusInput = () => {
-  //   cardInputRef.current.focus();
-  // };
-
-  // const handleFilterButtonCard = (filter) => {
-  //   store.cardsFilter = filter;
-  //   focusInput();
-  // };
-
-  // const handleFilterButtonCards = (status, text) => {
-  //   const lowerCaseText = text.toLowerCase();
-  //   if (status === 'active') {
-  //     return todos.filter((val) => (val.name.toLowerCase().includes(lowerCaseText) && val.completeTask === false) || `${val.id} ` === text);
-  //   }
-  //   if (status === 'completed') {
-  //     return todos.filter((val) => (val.name.toLowerCase().includes(lowerCaseText) && val.completeTask === true) || `${val.id}  ` === text);
-  //   }
-  //   return todos.filter((val) => val.name.toLowerCase().includes(lowerCaseText) || `${val.id} ` === lowerCaseText);
-  // };
-
   const handleSubmitForm = (evt, name) => {
     evt.preventDefault();
     const upperCaseName = name.split('')[0].toUpperCase() + name.slice(1);
-    // setSearchRequest('');
     dispatch(addTodo({ name: upperCaseName }));
-    // focusInput();
   };
-
-  // const handlePopupCloseOverlay = (e) => {
-  //   const classes = e.target.classList.value.split(' ').filter((val) => val.includes('popup_active'));
-  //   if (e.target.classList.contains(classes)) {
-  //     handlePopupToggle();
-  //   }
-  // };
 
   const handleFilterButtonCards = (status) => {
     if (status === 'active') {
@@ -121,9 +67,7 @@ export const App = () => {
         <main className={`d-flex flex-column ${styles.main}`}>
           {todos.length > 0 && (
             <SearchPanel
-              // setSearchRequest={setSearchRequest}
               handleFilterButtonCards={handleFilterButtonCards}
-              // searchRequest={searchRequest}
               handleSearchTextCards={handleSearchTextCards}
             />
           )}
@@ -133,12 +77,6 @@ export const App = () => {
             handleSubmitForm={handleSubmitForm}
           />
         </main>
-        {/* <Popup */}
-        {/*  // card={cardDelete} */}
-        {/*  popupOpen={popupOpen} */}
-        {/*  handlePopupCloseOverlay={handlePopupCloseOverlay} */}
-        {/*  handlePopupToggle={handlePopupToggle} */}
-        {/* /> */}
       </div>
     </div>
   );

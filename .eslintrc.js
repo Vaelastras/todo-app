@@ -28,5 +28,15 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 'off',
     'import/no-named-as-default': 0,
     'max-len': 'off',
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
 };
